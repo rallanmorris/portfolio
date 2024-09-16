@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    C02 Table
+{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/apnea.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+    <h1>C02 Table</h1>
+    <div style="display: flex; width:100%;
+                justify-content:left; padding-top: 0%;">   
+        {% if pb %}
+            <h3>Based on your personal best of &nbsp;</h3>
+            <h3 id="pb">{{ pb }}</h3>
+            <h3>&nbsp; seconds</h3>
+        {% else %}
+            <h3>Based on the average breath hold of 90 seconds </h3>
+        {% endif %}
+    </div>
+
+    <button type="button" onclick="countdown()">START</button>
+    <button type="button" onclick="window.location.reload();">RESET</button>
+    <div style="display: flex; width:80%;
+                justify-content:center; padding-top: 0%;"> 
+        <h2>Round: </h2>
+        <h2 id="roundnum">Round Number</h2>
+    </div>  
+    <div style="display: flex; width:80%;
+                justify-content:center; padding-top: 0%;">        
+        <h1 id="roundtype">Round Type</h1>
+    </div>
+
+    <div style="display: flex; width:auto; 
+                justify-content:center; padding-top: 0%; padding-right: 20%;">
+        <input id="minutes" 
+               type="text" 
+               style="width: 10%; border: none; font-size: 144px;
+                      font-weight: bold; color: black;">
+        <font size="144">
+            :
+        </font>
+        <input id="seconds" 
+               type="text" 
+               style="width: 25%; border: none; font-size: 144px;
+                      font-weight: bold; color: black;">
+    </div>
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/c02.js' %}"></script>
+{% endblock extra_js %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    O2 Table
+{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/apnea.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+    <h1>O2 Table</h1>
+    <h3>The duration of the last breath-hold in this table should not exceed 80% of your personal best</h3>
+{% endblock content %}

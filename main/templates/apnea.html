@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Apnea Trainer
+{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/apnea.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+    <h1>APNEA TRAINER</h1>
+    <div class="container" id="testDiv">        
+        <h1>Test Your Maximum Breath Hold</h1>
+        <div id="time">
+            <span class="digit" id="min">
+                00</span>
+            <span class="txt">Min</span>
+            <span class="digit" id="sec">
+                00</span>
+            <span class="txt">Sec</span>
+            <span class="digit" id="count">
+                00</span>
+        </div>
+        <div id="buttons">
+            <button class="btn" id="start" name="start">
+                Start</button>
+            <button class="btn" id="stop" name="stop">
+                Stop</button>
+            <button class="btn" id="reset">
+                Reset</button>
+        </div>
+        <br>
+        <h1>Maximum Hold in Seconds</h3>  
+        <form method="POST">
+            {% csrf_token %}
+            <input type="number" name="pr" id="pr"/>
+            <button type="submit" name="pr_submit">SET AS MAX</button>
+        </form>
+    </div>
+
+    <div id="tablesDiv">
+        <h1>APNEA TABLES</h1>
+        {% if elapsed_time %}
+            <h1>Personal Best Breath Hold: {{ elapsed_time }} seconds</h1>
+            <script>
+                document.getElementById('testDiv').style.display = "none";
+                document.getElementById('tablesDiv').style.display = "block";
+            </script>
+        {% else %}
+            <script>
+                document.getElementById('testDiv').style.display = "flex";
+                document.getElementById('tablesDiv').style.display = "none";
+            </script>
+        {% endif %}
+
+
+        <h1>WARNING:</h1>
+        <h2>NEVER practice more than one table daily!</h2>
+        <h2>NEVER practice more than eight cycles within one table!</h2>
+        <h2>NEVER perform both tables during the same day!</h2>
+        <h2>ONLY perform two to four tables per week!</h2>
+        <h2>BREAKING THESE RULES CAN CAUSE SERIOUS DAMAGE TO YOUR RESPIRATORY SYSTEM</h2>
+
+
+        <h2>C02 TABLE</h2>
+        <h3>The duration of breath-hold should not be higher than 50% of your personal best</h3>
+        <a href="/apnea/c02">C02 Table</a>
+
+        <h2>02 TABLE</h2>
+        <h3>The duration of the last breath-hold in this table should not exceed 80% of your personal best</h3>
+        <a href="/apnea/O2">O2 Table</a>
+    </div>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/apnea.js' %}"></script>
+{% endblock extra_js %}

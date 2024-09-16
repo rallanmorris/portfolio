@@ -41,4 +41,9 @@ def c02(request):
     return render(request, "c02.html", context)
 
 def O2(request):
-    return render(request, "O2.html")
+    pb = request.session.get('pb', None)
+
+    context = {
+        'pb': pb,
+    }
+    return render(request, "O2.html", context)

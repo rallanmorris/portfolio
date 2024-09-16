@@ -5,10 +5,54 @@
     O2 Table
 {% endblock title %}
 {% block extrahead %}
-    <link rel="stylesheet" href="{% static 'css/apnea.css' %}">
+    <link rel="stylesheet" href="{% static 'css/c02.css' %}">
 {% endblock extrahead %}
 
 {% block content %}
     <h1>O2 Table</h1>
     <h3>The duration of the last breath-hold in this table should not exceed 80% of your personal best</h3>
+
+    <div style="display: flex; width:100%;
+                justify-content:left; padding-top: 0%;">   
+        {% if pb %}
+            <h3>Based on your personal best of &nbsp;</h3>
+            <h3 id="pb">{{ pb }}</h3>
+            <h3>&nbsp; seconds</h3>
+        {% else %}
+            <h3>Based on the average breath hold of 90 seconds </h3>
+        {% endif %}
+    </div>
+
+    <div class="info"> 
+        <h2>Round: </h2>
+        <h2 id="roundnum">1</h2>
+    </div>  
+    <div class="info">        
+        <h1 id="roundtype">Round Type</h1>
+    </div>
+
+    <div class="container">
+        <div>
+            <span id="minutes" class="digit" type="text" value="0">
+                0
+            </span>
+            <span type="text" class="digit">
+            :
+            </span>
+            <span id="seconds" class="digit" type="text" value="00">
+                00
+            </span>
+        </div>       
+    </div>
+
+    <div class="btns">
+        <button class="btn" type="button" id="start" onclick="countdown()">START</button>
+        &nbsp; &nbsp; &nbsp;
+        <button class="btn" type="button" id="reset" onclick="window.location.reload();">RESET</button>
+    </div>
+
 {% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/O2.js' %}"></script>
+{% endblock extra_js %}

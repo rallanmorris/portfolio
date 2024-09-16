@@ -5,7 +5,7 @@
     C02 Table
 {% endblock title %}
 {% block extrahead %}
-    <link rel="stylesheet" href="{% static 'css/apnea.css' %}">
+    <link rel="stylesheet" href="{% static 'css/c02.css' %}">
 {% endblock extrahead %}
 
 {% block content %}
@@ -21,32 +21,34 @@
         {% endif %}
     </div>
 
-    <button type="button" onclick="countdown()">START</button>
-    <button type="button" onclick="window.location.reload();">RESET</button>
-    <div style="display: flex; width:80%;
-                justify-content:center; padding-top: 0%;"> 
+    <div class="info"> 
         <h2>Round: </h2>
-        <h2 id="roundnum">Round Number</h2>
+        <h2 id="roundnum">1</h2>
     </div>  
-    <div style="display: flex; width:80%;
-                justify-content:center; padding-top: 0%;">        
+    <div class="info">        
         <h1 id="roundtype">Round Type</h1>
     </div>
 
-    <div style="display: flex; width:auto; 
-                justify-content:center; padding-top: 0%; padding-right: 20%;">
-        <input id="minutes" 
-               type="text" 
-               style="width: 10%; border: none; font-size: 144px;
-                      font-weight: bold; color: black;">
-        <font size="144">
+    <div class="container">
+        <div>
+            <span id="minutes" class="digit" type="text" value="0">
+                0
+            </span>
+            <span type="text" class="digit">
             :
-        </font>
-        <input id="seconds" 
-               type="text" 
-               style="width: 25%; border: none; font-size: 144px;
-                      font-weight: bold; color: black;">
+            </span>
+            <span id="seconds" class="digit" type="text" value="00">
+                00
+            </span>
+        </div>       
     </div>
+
+    <div class="btns">
+        <button class="btn" type="button" id="start" onclick="countdown()">START</button>
+        &nbsp; &nbsp; &nbsp;
+        <button class="btn" type="button" id="reset" onclick="window.location.reload();">RESET</button>
+    </div>
+
 {% endblock content %}
 
 {% block extra_js %}

@@ -47,29 +47,36 @@ let isPrep = true;
             roundNum = document.getElementById("roundnum");
             roundNum.innerText = Math.ceil((round-1)/2);
 
+
             roundType = document.getElementById("roundtype");
             if(isPrep) {
-                roundType.innerText = "VENTILATE";
+                roundType.innerText = "BREATHE DEEPLY";
             }
             else {
                 roundType.innerText = "HOLD YOUR BREATH";
             }
             
+            console.log(getseconds())
+            
             if (seconds < 59) {
-                seconds.value = secs;
+                seconds.innerText = secs;
             }
             else {
-                minutes.value = getminutes();
-                seconds.value = getseconds();
+                minutes.innerText = getminutes();
+                seconds.innerText = getseconds();
             }
             if (mins < 1) {
                 minutes.style.color = "red";
                 seconds.style.color = "red";
             }
+            if (getseconds() < 10) {
+                seconds.innerText = "0" + getseconds();
+                console.log("0" + secs);
+            }
             if (mins < 0) {
                 countdown();
-                minutes.value = 0;
-                seconds.value = 0;
+                minutes.innerText = 0;
+                seconds.innerText = 0;
             }
             else {
                 secs--;

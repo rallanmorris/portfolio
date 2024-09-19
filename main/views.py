@@ -47,3 +47,9 @@ def O2(request):
         'pb': pb,
     }
     return render(request, "O2.html", context)
+
+def dice(request):
+    return render(request, "dice.html")
+
+def resume(request):
+    return render(request, "resume.html")

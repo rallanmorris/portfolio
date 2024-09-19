@@ -9,12 +9,16 @@
 {% endblock extrahead %}
 
 {% block content %}
-    <p>this the project page</p>
     <div class="project-card">
         <div class="project-info">
             <h1>{{ project.title }}</h1>
-            <p><a href="{{ project.link }}">Project Link</a></p>
+            {% if project.link %}
+                <p><a href="{{ project.link }}">Project Link</a></p>
+            {% endif %}
             <p><a href="{{ project.github }}">Github Link</a></p>
+            {% if project.upload %}
+                <p><a href="{{ project.upload.url }}" download>Download Link</a></p>
+            {% endif %}
             <p>{{ project.description}}</p>
             <a href="{% url 'home' %}">Back to Home</a>
         </div>

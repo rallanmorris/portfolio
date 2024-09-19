@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Dice
+{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/dice.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<h1>Dice Roller</h1>
+<br>
+
+<h2>Create and roll any number of any dice!</h2>
+<br>
+<div id="inputdiv">
+    <div id="d" class="inputs">d</div> 
+    &nbsp; 
+    <div class="inputs"><input id="dienum" type="number" value="0"></div>
+</div>
+
+<br>
+<div class="btns">
+    <button class="btn" type="button" id="add" onclick="add()">ADD DIE</button>
+    &nbsp; &nbsp; &nbsp;
+    <button class="btn" type="button" id="roll" onclick="roll()">ROLL</button>
+    &nbsp; &nbsp; &nbsp;
+    <button class="btn" type="button" id="reset" onclick="window.location.reload();">RESET</button>
+</div>
+
+
+<div id="container" class="container">
+</div>
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/dice.js' %}"></script>
+{% endblock extra_js %}

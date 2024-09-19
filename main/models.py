@@ -14,6 +14,7 @@ class Project(models.Model):
     tags = models.ManyToManyField(Tag, related_name="projects")
     link = models.TextField(blank=True)
     github = models.URLField(max_length=200, blank=True)
+    upload = models.FileField(upload_to='uploads/', blank=True)
 
     def __str__(self):
         return self.title

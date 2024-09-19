@@ -18,7 +18,7 @@
   }
   
   .tag {
-    background-color: #007bff;
+    background-color: #003019;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -28,7 +28,7 @@
   }
   
   .tag:hover {
-    background-color: #0056b3;
+    background-color: #0ff394;
   }
   
   /* Projects list */
@@ -37,7 +37,7 @@
   }
   
   .project {
-    background-color: white;
+    background-color: rgb(177, 255, 174);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;

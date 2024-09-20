@@ -73,3 +73,19 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.tables {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+}
+
+#c02btn {
+    background-color: #0e85fc;
+    width: 80%;
+}
+
+#O2btn {
+    background-color: #c91400;
+    width: 80%;
+}

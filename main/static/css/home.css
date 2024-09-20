@@ -1,3 +1,32 @@
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-color: #003019;
+}
+
+.icons {
+  display: inline-block;   
+  margin: 10px;
+  width: 150px;    
+}
+ 
+#git {
+  width: 200px; 
+  margin-left: 30%;
+}
+
+.about {
+  display: inline-block;
+  width: 48%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+}
+
+#profile {
+  width: 400px;  
+}
+
 /* Filters section */
 .filters {
     margin-bottom: 20px;

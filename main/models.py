@@ -27,3 +27,10 @@ class ProjectImage(models.Model):
 
     def __str__(self):
         return f"{self.project.title} Image"
+
+class Resume(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    upload = models.FileField(upload_to='uploads/', blank=True)
+
+    def __str__(self):
+        return self.name

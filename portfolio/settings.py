@@ -35,8 +35,8 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_FILE_OVERWRITE = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
+#
 ALLOWED_HOSTS = ['.vercel.app']
 
 
@@ -142,6 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Added to enable pdf viewer
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+# S3 File management
 STORAGES = {
     # Media file (image) management
     "default": {

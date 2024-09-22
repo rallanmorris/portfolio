@@ -36,8 +36,8 @@ AWS_S3_FILE_OVERWRITE = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#
-ALLOWED_HOSTS = ['.vercel.app']
+#'.vercel.app'
+ALLOWED_HOSTS = []
 
 
 # Application definition

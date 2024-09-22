@@ -35,9 +35,9 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_FILE_OVERWRITE = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#
-ALLOWED_HOSTS = ['.vercel.app']
+DEBUG = False
+#'.vercel.app'
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,13 +86,22 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+'''
+# Postgresql
+import dj_database_url
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+DATABASES = {
+    'default': dj_database_url.parse(DATABASE_URL)
+}
+
 
 
 # Password validation

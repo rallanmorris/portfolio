@@ -4,10 +4,9 @@
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
     }],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/(.*)",
-            "dest": "portfolio/wsgi.py"
+            "source": "/(.*)", "destination": "portfolio/wsgi.py"
         }
     ],
     "headers": [

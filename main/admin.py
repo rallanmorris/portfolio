@@ -22,6 +22,7 @@ class TagAdmin(admin.ModelAdmin):
 class ResumeAdmin(admin.ModelAdmin):
     list_display = ("name",)
 
+
 # Register your models here.
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Project, ProjectAdmin)

@@ -35,9 +35,9 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_FILE_OVERWRITE = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-#
-ALLOWED_HOSTS = ['.vercel.app']
+DEBUG = True
+#'.vercel.app'
+ALLOWED_HOSTS = []
 
 
 # Application definition

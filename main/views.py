@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, Tag
+from .models import Project, Tag, Resume
 import time, math
 
 # Create your views here.
@@ -52,4 +52,5 @@ def dice(request):
     return render(request, "dice.html")
 
 def resume(request):
-    return render(request, "resume.html")
+    resume = get_object_or_404(Resume)
+    return render(request, "resume.html", {"resume": resume})

@@ -9,5 +9,7 @@
 {% endblock extrahead %}
 
 {% block content %}
-    <iframe style="width: 100%; height: 975px;" src="{{ resume.upload.url }}" frameborder="0"></iframe>
+    {% if resume %}
+        <iframe style="width: 100%; height: 975px;" src="{{ resume.upload.url }}" frameborder="0"></iframe>
+    {% endif %}
 {% endblock content %}

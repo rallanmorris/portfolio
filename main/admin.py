@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Tag, Project, ProjectImage
 
-# pass: ram38317
 
 class ProjectImageInline(admin.TabularInline):
     model = ProjectImage

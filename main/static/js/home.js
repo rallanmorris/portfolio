@@ -4,10 +4,10 @@ const aboutSection = document.getElementById("aboutdiv");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-canvasWidth = canvas.width;
+canvasWidth = canvas.width + 200;
 canvasHeight = canvas.height;
 
-const centerX = canvasWidth / 2;
+const centerX = canvas.width / 2;
 const centerY = canvasHeight / 2;
 let onBtn = false;
 
@@ -16,7 +16,9 @@ function drawTxt() {
     ctx.font = "50px Arial";
     ctx.textAlign = "center";
     ctx.fillText("Hello, I'm Richard.", centerX, centerY - 50);
-    ctx.fillText("I'm a full stack web developer.", centerX, centerY + 40);
+    ctx.font = "40px Arial";
+    ctx.fillText("I'm a", centerX, centerY + 25);
+    ctx.fillText("full stack web developer.", centerX, centerY + 75);
     
 
     ctx.fillStyle = '#003019';

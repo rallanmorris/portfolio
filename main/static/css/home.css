@@ -15,7 +15,7 @@ h1 {
   padding-top: 5%;
 }  
   #profile {
-    width: 400px;
+    width: 300px;
   }
 
 #skills {
@@ -33,8 +33,8 @@ h1 {
   }
 
   .icons-img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
   
   #git {

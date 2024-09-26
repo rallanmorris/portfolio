@@ -1,7 +1,7 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const aboutSection = document.getElementById("aboutdiv");
-const test = document.getElementById("test").innerText = "TEST";
+
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -9,7 +9,7 @@ canvasWidth = canvas.width;
 if(canvasWidth < 640) {
   canvasWidth += (640 - canvasWidth);
 }
-
+const test = document.getElementById("test").innerText = canvasWidth;
 canvasHeight = canvas.height;
 console.log(canvasWidth);
 const centerX = canvas.width / 2;

@@ -17,7 +17,7 @@
             {% endif %}
             <p><a href="{{ project.github }}">Github Link</a></p>
             {% if project.upload %}
-                <p><a href="{{ project.upload.url }}" download>Download Link</a></p>
+                <p><a href="{{ project.upload.url }}" download>Download Link (EXE)</a></p>
             {% endif %}
             <p>{{ project.description}}</p>
             <a href="{% url 'home' %}">Back to Home</a>

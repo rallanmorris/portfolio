@@ -2,8 +2,8 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const aboutSection = document.getElementById("aboutdiv");
 
-canvas.width = document.body.clientWidth; 
-canvas.height = 900; 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 canvasWidth = canvas.width;
 canvasHeight = canvas.height;
 

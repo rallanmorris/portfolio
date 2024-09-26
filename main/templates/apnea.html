@@ -32,18 +32,18 @@
                 Reset</button>
         </div>
         <br>
-        <h1>Maximum Hold in Seconds</h3>  
+        <h1>Maximum Hold in Seconds:</h3>  
         <form method="POST">
             {% csrf_token %}
-            <input type="number" name="pr" id="pr"/>
-            <button type="submit" class="btn" name="pr_submit" id="prsubmit">SET AS MAX</button>
+            <input type="number" name="pr" id="pr" value="90"/>
+            <button type="submit" class="btn" name="pr_submit" id="prsubmit">CONTINUE</button>
         </form>
     </div>
 
     <div id="tablesDiv">
         <h1>APNEA TABLES</h1>
         {% if elapsed_time %}
-            <h1>Personal Best Breath Hold: {{ elapsed_time }} seconds</h1>
+            <h1>Based on your personal best of {{ elapsed_time }} seconds</h1>
             <script>
                 document.getElementById('testDiv').style.display = "none";
                 document.getElementById('tablesDiv').style.display = "block";

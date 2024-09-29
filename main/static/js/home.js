@@ -1,15 +1,15 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const aboutSection = document.getElementById("aboutdiv");
+var isMobile = false;
 
+if(window.innerWidth < 640) {
+  isMobile = true;
+}
 
-canvas.width = window.innerWidth;
+canvas.width = window.innerWidth - 55;
 canvas.height = window.innerHeight;
 canvasWidth = canvas.width;
-if(canvasWidth < 640) {
-  canvasWidth += (640 - canvasWidth);
-}
-const test = document.getElementById("test").innerText = canvasWidth;
 canvasHeight = canvas.height;
 console.log(canvasWidth);
 const centerX = canvas.width / 2;
@@ -18,19 +18,31 @@ let onBtn = false;
 
 function drawTxt() {
     ctx.fillStyle = '#000000';
-    ctx.font = "50px Arial";
-    ctx.textAlign = "center";
+    if(isMobile) {
+      ctx.font = "normal 38px Courier New";
+    }
+    else {
+      ctx.font = "normal 50px Courier New";
+    }
+    ctx.textAlign = "center";   
     ctx.fillText("Hello, I'm Richard.", centerX, centerY - 50);
-    ctx.font = "40px Arial";
-    ctx.fillText("I'm a", centerX, centerY + 25);
-    ctx.fillText("full stack web developer.", centerX, centerY + 75);
+
+    if(isMobile) {
+      ctx.font = "normal 30px Courier New";
+      ctx.fillText("I'm a", centerX, centerY + 20);
+      ctx.fillText("full stack web developer.", centerX, centerY + 65);
+    }
+    else {
+      ctx.font = "normal 40px Courier New";
+      ctx.fillText("I'm a full stack web developer.", centerX, centerY + 20);
+    }
     
 
     ctx.fillStyle = '#003019';
     ctx.fillRect(centerX - 100, centerY + 110, 200, 75);
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
-    ctx.font = '25px arial';
+    ctx.font = '25px Courier New';
     ctx.fillText('View my work', centerX, centerY + 155);
 
 }
@@ -247,8 +259,16 @@ function updateGrid() {
 }
 
 function gameLoop() {
-  updateGrid();
-  drawGrid(); 
+  if(!isMobile) {
+    try {
+      updateGrid();
+    } catch (error) {
+      //console.error(error);
+    }
+    //updateGrid();
+    drawGrid(); 
+    //requestAnimationFrame(gameLoop);
+  }
   requestAnimationFrame(gameLoop);
   drawTxt();
   drawBtn(onBtn);

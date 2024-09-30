@@ -9,7 +9,7 @@
 }
 
 .digit {
-    font-size: 50px;
+    font-size: 120px;
     color: #000000;
 }
 
@@ -49,4 +49,8 @@
 
 #reset {
     background-color: #c91400;
+}
+
+h3 {
+    font-size: 14px;
 }

@@ -133,14 +133,12 @@ h1 {
     }
     #git {
       display: block;
-      padding-right: 0%;
-      margin-left: 38%;
-      margin-right: 38%;
       text-align: center; 
+      padding-left: 30%;
     }
     .icons-img {
-      width: 100px;
-      height: 100px;
+      width: 115px;
+      height: 115px;
     }
   }
 

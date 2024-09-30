@@ -19,7 +19,7 @@ let onBtn = false;
 function drawTxt() {
     ctx.fillStyle = '#000000';
     if(isMobile) {
-      ctx.font = "normal 38px Courier New";
+      ctx.font = "normal 30px Courier New";
     }
     else {
       ctx.font = "normal 50px Courier New";
@@ -28,7 +28,7 @@ function drawTxt() {
     ctx.fillText("Hello, I'm Richard.", centerX, centerY - 50);
 
     if(isMobile) {
-      ctx.font = "normal 30px Courier New";
+      ctx.font = "normal 25px Courier New";
       ctx.fillText("I'm a", centerX, centerY + 20);
       ctx.fillText("full stack web developer.", centerX, centerY + 65);
     }
